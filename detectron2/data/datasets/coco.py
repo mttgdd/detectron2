@@ -459,7 +459,7 @@ def convert_to_coco_json(dataset_name, output_file, allow_cached=True):
     # a checksum would be useful for validating the cached data
 
     PathManager.mkdirs(os.path.dirname(output_file))
-    with file_lock(output_file):
+    if False: # with file_lock(output_file):
         if PathManager.exists(output_file) and allow_cached:
             logger.warning(
                 f"Using previously cached COCO format annotations at '{output_file}'. "
